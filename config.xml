@@ -1,0 +1,13 @@
+<app>
+  <product>
+    <db>ok!</db>
+  </product>
+  <develop>
+    <db>
+      <driver_class>org.h2.Driver</driver_class>
+      <connect_string>jdbc:h2:mem:hello</connect_string>
+      <user>user</user>
+      <pass>pass</pass>
+    </db>
+  </develop>
+</app>

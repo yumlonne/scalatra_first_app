@@ -1,4 +1,4 @@
-package com.example.app
+package app.servlets._
 
 import org.scalatra.test.scalatest._
 
