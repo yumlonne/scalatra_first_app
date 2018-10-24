@@ -7,9 +7,11 @@ object Config extends Env {
 }
 
 trait Config {
-  def config(path: String): String = {
-    accessToXML(path, Config.xml).get
-  }
+  def config(path: String): String = accessToXML(path, Config.xml).get
+  def configs(paths: String*): Seq[String] = paths.map { path => accessToXML(path, Config.xml).get }
+
+  def configOpt(path: String): Option[String] = accessToXML(path, Config.xml)
+  def configOpts(paths: String*): Seq[Option[String]] = paths.map { path => accessToXML(path, Config.xml) }
 
   private def accessToXML(path: String, xml: NodeSeq): Option[String] = {
     def access(keys: List[String], xml: NodeSeq): Option[String] = keys match {
